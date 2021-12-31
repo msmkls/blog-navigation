@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>DM_NAS</title>
+    <link rel='Shortcut Icon' type='image/x-icon' href='./img/windows.ico'>
+    <script type="text/javascript" src="./js/jquery-2.2.4.min.js"></script>
+    <link href="./css/animate.css" rel="stylesheet">
+    <script type="text/javascript" src="./component/layer-v3.0.3/layer/layer.js"></script>
+    <link rel="stylesheet" href="./component/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="./css/default.css" rel="stylesheet">
+    <script type="text/javascript" src="./js/win10.js"></script>
+    <link href="./plugins/drawer/shortcut-drawer.min.css" rel="stylesheet">
+    <script type="text/javascript" src="./plugins/drawer/shortcut-drawer.min.js"></script>	
+	<style>
+        * {
+            font-family: "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu
+        }
+        /*磁贴自定义样式*/
+        .win10-block-content-text {
+            line-height: 44px;
+            text-align: center;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        Win10.onReady(function () {
+
+            //设置壁纸
+            Win10.setBgUrl({
+                main:'https://unsplash.it/1920/1080/?random',
+                mobile:'https://unsplash.it/1125/2436/?random',
+            });
+
+            Win10.setAnimated([
+                'animated flip',
+                'animated bounceIn',
+            ], 0.01);
+            
+            setTimeout(function () {
+                Win10.newMsg('Donate~', 'Scan the QR code to buy me a drink ^_^</br></br> <img src="./img/presentation/donation.png" style="width: 60%; top:800;" />')
+            }, 2500);
+
+            setTimeout(function () {
+                Win10.newMsg('Welcome~', '<a target="_blank" style="color:inherit" href="https://shang.qq.com/wpa/qunwpa?idkey=66f37313bf5f5927bde166d846a2ecccdc50b85f6e9ac5e6435ecf66ec2b6843">[Click me] Or Scan the QR code to join in QQGroup </br></br> <img src="./img/code.png" style="width: 50%; top:800;" /></a>')
+            }, 2500);
+
+
+        });
+
+        //该函数可删除 Orz
+        function win10_forgive_me() {
+            Win10.enableFullScreen();
+            layer.alert('Hello Visitor, You dont know me but I know </br>you, I want to play a game.', {}, function(index){
+                var blue=$('<img src="./img/presentation/bluescreen.jpg" style="position: fixed;width: 100%;height:100%;top:0;z-index:9999999999" />');
+                setTimeout(function () {
+                    $('body').append(blue);
+                },3000);
+                setTimeout(function () {
+                    blue.remove();
+                    Win10.disableFullScreen();
+                    setTimeout(function () {
+                        layer.msg('Congratulations. You are still alive. Most people are so ungrateful to be alive. But not you. Not anymore.');
+
+                    },1000);
+                },9000);
+                layer.close(index);
+            });
+
+        }
+    </script>
+</head>
+<body>
+<div id="win10">
+    <div class="desktop">
+        <div id="win10-shortcuts" class="shortcuts-hidden">
+            <div class="shortcut" onclick="Win10.openUrl('./file','<img class=\'icon\' src=\'./img/icons/imageres_123.ico\'/>Administrator')">
+                <img class="icon" src="./img/icons/imageres_123.ico"/>
+                <div class="title">Administrator</div>
+            </div>
+            <div class="shortcut" onclick="Win10.openUrl('https://www.9366333.cn:5001','<img class=\'icon\' src=\'./img/icons/imageres_109.ico\'/></i>This PC','max')">
+                <img class="icon" src="./img/icons/imageres_109.ico"/>
+                <div class="title">This PC</div>
+            </div>
+            <div class="shortcut" onclick="Win10.openUrl('https://www.9366333.cn:2017','<img class=\'icon\' src=\'./img/icons/imageres_25.ico\'/>WrokGroup')">
+                <img class="icon" src="./img/icons/imageres_25.ico"/>
+                <div class="title">NetWork</div>
+            </div>	
+            <div class="shortcut">
+                <img class="icon" src="./img/icons/imageres_54.ico"/>
+                <div class="title">Recycle Bin</div>
+            </div>	
+            <div class="shortcut" onclick="Win10.openUrl('https://www.9366333.cn:32323/','<img class=\'icon\' src=\'./img/icons/imageres_189.ico\'/>Emby Player')">
+                <img class="icon" src="./img/icons/imageres_189.ico"/>
+                <div class="title">My Video</div>
+            </div>	
+            <div class="shortcut" onclick="Win10.openUrl('./photo','<img class=\'icon\' src=\'./img/icons/imageres_113.ico\'/>Photo Station')">
+                <img class="icon" src="./img/icons/imageres_113.ico"/>
+                <div class="title">My Picture</div>
+            </div>
+            <div class="shortcut" onclick="Win10.openUrl('./Music','<img class=\'icon\' src=\'./img/icons/imageres_108.ico\'/>Online Music Player')">
+                <img class="icon" src="./img/icons/imageres_108.ico"/>
+                <div class="title">My Music</div>
+            </div>
+            <div class="shortcut win10-drawer">
+                <img class="icon" src="./img/icons/imageres_184.ico"/>
+                <div class="title">Downloader</div>
+                <div class="win10-drawer-box">
+                    <div class="shortcut-drawer win10-open-window" data-url="./download/">
+                        <img class="icon" src="./img/icons/imageres_184.ico"/>
+                        <div class="title">Synology Downloader</div>
+                    </div>
+                    <div class="shortcut-drawer win10-open-window" data-url="./aria2/">
+                        <img class="icon" src="./img/icons/imageres_5381.ico"/>
+                        <div class="title">Aria2 Downloader</div>
+                    </div>
+                    <div class="shortcut-drawer win10-open-window" data-url="https://www.9366333.cn:9090/">
+                        <img class="icon" src="./img/icons/timg.png"/>
+                        <div class="title">Transmission Downloader</div>
+                    </div>
+                </div>
+            </div>	            
+            <div class="shortcut" onclick="window.open('https://www.9366333.cn:2018/','<img class=\'icon\' src=\'./img/icons/K3.png\'/>Phicomm K3')">
+                <img class="icon" src="./img/icons/K3.png"/>
+                <div class="title">Phicomm K3</div>
+            </div>   	            
+            <div class="shortcut" onclick="Win10.openUrl('./cloud','<img class=\'icon\' src=\'./img/icons/yunpan.ico\'/>My Cloud')">
+                <img class="icon" src="./img/icons/yunpan.ico"/>
+                <div class="title">Cloud</div>
+            </div>   
+            <div class="shortcut" onclick="window.open('http://yuancheng.xunlei.com','<img class=\'icon\' src=\'./img/icons/xunlei7.ico\'/>Thunder Remote')">
+                <img class="icon" src="./img/icons/xunlei7.ico"/>
+                <div class="title">Thunder</div>
+            </div>	 		            
+            <div class="shortcut" onclick="Win10.openUrl('./wordpress','<img class=\'icon\' src=\'./img/icons/wordpress-logo.png\'/></i>My Blog','max')">
+                <img class="icon" src="./img/icons/wordpress-logo.png"/>
+                <div class="title">My Blog</div>
+            </div>        
+            <div class="shortcut win10-drawer">
+                <img class="icon" src="./img/icons/imageres_14.ico"/>
+                <div class="title">Games</div>
+                <div class="win10-drawer-box">
+                    <div class="shortcut-drawer win10-open-window" data-url="./plugins/games/SmbcPreloader.swf" data-area-offset="[['513px', '523px']]">
+                        <img class="icon" src="./plugins/games/FullScreenMario/Theme/Mario.gif"/>
+                        <div class="title">Super Mario</div>
+                    </div>
+                    <div class="shortcut-drawer win10-open-window" data-url="./plugins/games/tales.swf" data-area-offset="[['790px', '630px']]">
+                        <img class="icon" src="./plugins/games/FullScreenMario/Theme/tales.jpg"/>
+                        <div class="title">Xenozoic</div>
+                    </div>
+                    <div class="shortcut-drawer win10-open-window" data-url="./plugins/games/flappy" data-area-offset="[['330px', '600px']]">
+                        <img class="icon" src="./plugins/games/flappy/icon.png"/>
+                        <div class="title">Flappy Bird</div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+        <div id="win10-desktop-scene"></div>
+    </div>
+    <div id="win10-menu" class="hidden">
+        <div class="list win10-menu-hidden animated animated-slideOutLeft">
+            <div class="item" onclick="Win10.aboutUs()"><i class="purple icon fa fa-info-circle fa-fw"></i>About Me</div>
+            <div class="item" onclick="layer.open({
+                title:'Support Me',
+                type: 1,
+                area:'300px',
+                offset:'50px',
+                shadeClose:true,
+                content: '<img width=\'300\' src=\'./img/presentation/donation.png\' />'
+            })"><i class="green icon fa fa-thumbs-up fa-fw"></i>Donation</div>
+            <div class="item" onclick=" Win10.exit();"><i class="black icon fa fa-power-off fa-fw"></i>Shut Down</div>
+        </div>
+        <div class="blocks">
+            <div class="menu_group">
+                <div class="title">
+                    Application
+                </div>
+                <div loc="1,1" size="4,4" class="block">
+                    <div class="content blue cover" style="font-size: 40px;line-height: 36px;text-align: center">
+                        </br><i class="fa fa-cloud fa-fw"></i> </br>Weather
+                    </div>
+                    <div class="content detail" style="background-color: rgb(46,147,217)">
+                        <iframe src="//www.seniverse.com/weather/weather.aspx?uid=U43DF172E7&cid=CHBJ000000&l=&p=SMART&a=1&u=C&s=13&m=2&x=1&d=1&fc=&bgc=2E93D9&bc=&ti=0&in=0&li=" frameborder="0" scrolling="no" width="200" height="300" allowTransparency="true"></iframe>
+                    </div>
+                </div>
+                <div loc="5,1" size="2,2" class="block" onclick="win10_forgive_me()">
+                    <div class="content red">
+                        <div style="text-align: center;font-size: 30px;line-height: 44px"><i class="fa fa-bug fa-fw"></i></div>
+                        <div style="text-align: center;font-size: 16px;line-height: 44px">Click Me</div>
+                    </div>
+                </div>
+                <div loc="5,3" size="2,2" class="block">
+                    <div class="content">
+                        <img style="width: 40px;height: 40px;margin: 5px auto;display: block" src="./img/icons/imageres_5100.ico">
+                        <div class="win10-block-content-text">Button</div>
+                    </div>
+                </div>
+                <div loc="1,5" size="6,3" class="block">
+                    <div class="content" style="background: url('./img/presentation/1.png');background-size: auto" onclick="window.open('https://www.9366333.cn:5001')">
+                    </div>
+                </div>
+                <div loc="1,8" size="2,1" class="block">
+                    <div class="content" style="background-color: red" onclick="window.open('http://www.gebi1.com/thread-274093-1-1.html')">
+                        <div class="win10-block-content-text">Gebi1</div>
+                    </div>
+                </div>
+                <div loc="3,8" size="2,1" class="block">
+                    <div class="content" style="background-color: orange" onclick="window.open('http://www.nasyun.com/forum.php?mod=viewthread&tid=30666&page=1&extra=#pid198851')">
+                        <div class="win10-block-content-text">NASyun</div>
+                    </div>
+                </div>  
+                <div loc="5,8" size="2,1" class="block">
+                    <div class="content" style="background-color: purple" onclick="window.open('http://www.right.com.cn/forum/forum.php')">
+                        <div class="win10-block-content-text">Right.com</div>
+                    </div>
+                </div>                  
+            </div>
+
+            <div class="menu_group">
+                <div class="title">
+                    Drop My Needle.
+                </div>    
+                <div loc="1,1" size="6,8" class="block">
+                    <div class="content red detail" >
+                        <iframe style="margin-top: 1px" frameborder="no" border="0" marginwidth="0" marginheight="0" width=264 height=350 src="./Music"></iframe>
+                    </div>
+                    <div class="content red cover">
+                        <img width="264" style="position: relative;top: 0px;" src="./img/presentation/player.jpg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="win10-menu-switcher"></div>
+    </div>
+    <div id="win10_command_center" class="hidden_right">
+        <div class="title">
+            <h4 style="float: left">Notification Center </h4>
+            <span id="win10_btn_command_center_clean_all">Clear All</span>
+        </div>
+        <div class="msgs"></div>
+    </div>
+    <div id="win10_task_bar">
+        <div id="win10_btn_group_left" class="btn_group">
+            <div id="win10_btn_win" class="btn"><span class="fa fa-windows"></span></div>
+            <div class="btn" id="win10-btn-browser"><span class="fa fa-internet-explorer"></span></div>
+        </div>
+        <div id="win10_btn_group_middle" class="btn_group"></div>
+        <div id="win10_btn_group_right" class="btn_group">
+            <div class="btn" id="win10_btn_time">
+                <!--0:00<br/>-->
+                <!--1993/8/13-->
+            </div>
+            <div class="btn" id="win10_btn_command"><span id="win10-msg-nof" class="fa fa-comment-o"></span></div>
+            <div class="btn" id="win10_btn_show_desktop"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
