@@ -1,3 +1,6 @@
 {
-
+  "index.ignored_file_patterns" : [
+    ".nova",
+    ".DS_Store"
+  ]
 }
