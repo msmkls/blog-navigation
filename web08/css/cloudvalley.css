@@ -1,0 +1,214 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "cloudvalley";
+  src:url("../font/cloudvalley.eot");
+  src:url("../font/cloudvalley.eot?#iefix") format("embedded-opentype"),
+    url("../font/cloudvalley.woff") format("woff"),
+    url("../font/cloudvalley.ttf") format("truetype"),
+    url("../font/cloudvalley.svg#cloudvalley") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "cloudvalley" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "cloudvalley" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-router:before {
+  content: "\61";
+}
+.icon-dsm:before {
+  content: "\62";
+}
+.icon-docker:before {
+  content: "\63";
+}
+.icon-vm:before {
+  content: "\64";
+}
+.icon-shell:before {
+  content: "\65";
+}
+.icon-download:before {
+  content: "\68";
+}
+.icon-pt:before {
+  content: "\69";
+}
+.icon-photo:before {
+  content: "\67";
+}
+.icon-audio:before {
+  content: "\6a";
+}
+.icon-video:before {
+  content: "\6b";
+}
+.icon-file:before {
+  content: "\6c";
+}
+.icon-doc:before {
+  content: "\6d";
+}
+.icon-note:before {
+  content: "\6e";
+}
+.icon-mail:before {
+  content: "\66";
+}
+.icon-surveillance:before {
+  content: "\71";
+}
+.icon-vbox:before {
+  content: "\72";
+}
+.icon-console:before {
+  content: "\73";
+}
+.icon-bookmark:before {
+  content: "\74";
+}
+.icon-medal:before {
+  content: "\75";
+}
+.icon-checkbox:before {
+  content: "\76";
+}
+.icon-music:before {
+  content: "\77";
+}
+.icon-book:before {
+  content: "\78";
+}
+.icon-desktop:before {
+  content: "\79";
+}
+.icon-folder:before {
+  content: "\7a";
+}
+.icon-search:before {
+  content: "\41";
+}
+.icon-vault:before {
+  content: "\42";
+}
+.icon-vault2:before {
+  content: "\43";
+}
+.icon-db:before {
+  content: "\44";
+}
+.icon-setting:before {
+  content: "\45";
+}
+.icon-filebox:before {
+  content: "\46";
+}
+.icon-server:before {
+  content: "\47";
+}
+.icon-servers:before {
+  content: "\48";
+}
+.icon-sharefolder:before {
+  content: "\49";
+}
+.icon-disk:before {
+  content: "\4a";
+}
+.icon-key:before {
+  content: "\4b";
+}
+.icon-global:before {
+  content: "\4c";
+}
+.icon-python:before {
+  content: "\4d";
+}
+.icon-wordpress:before {
+  content: "\4e";
+}
+.icon-mysql:before {
+  content: "\4f";
+}
+.icon-java:before {
+  content: "\50";
+}
+.icon-key2:before {
+  content: "\51";
+}
+.icon-php:before {
+  content: "\52";
+}
+.icon-bug:before {
+  content: "\53";
+}
+.icon-sharefile:before {
+  content: "\54";
+}
+.icon-dslr:before {
+  content: "\55";
+}
+.icon-projector:before {
+  content: "\56";
+}
+.icon-film:before {
+  content: "\57";
+}
+.icon-pig:before {
+  content: "\58";
+}
+.icon-bag:before {
+  content: "\59";
+}
+.icon-briefcase:before {
+  content: "\5a";
+}
+.icon-wallet:before {
+  content: "\30";
+}
+.icon-qrcode:before {
+  content: "\31";
+}
+.icon-star:before {
+  content: "\32";
+}
+.icon-rocket:before {
+  content: "\33";
+}
+.icon-game:before {
+  content: "\34";
+}
+.icon-diamond:before {
+  content: "\35";
+}
+.icon-circle:before {
+  content: "\6f";
+}
+.icon-flag:before {
+  content: "\70";
+}
