@@ -2,20 +2,22 @@
 
 首先需要安装 Python-telegram-bot 库，可以通过以下命令进行安装：
 
-Copy code
+```python
 pip install python-telegram-bot
+```
+
 接着，需要创建一个 bot 并获取 API Token，可以通过 BotFather 进行创建，具体步骤可以参考官方文档：https://core.telegram.org/bots#6-botfather
 
 安装完成后，可以编写 Python 代码实现机器人功能。首先，需要导入所需的库：
 
-python
-Copy code
+```python
 import sqlite3
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+```
+
 然后，可以连接 SQLite 数据库，并创建所需的数据表：
 
-python
-Copy code
+```python
 conn = sqlite3.connect('database.db')
 c = conn.cursor()
 
@@ -29,19 +31,21 @@ c.execute('''CREATE TABLE IF NOT EXISTS posts
 
 conn.commit()
 conn.close()
-下一步是创建机器人命令和回调函数。首先是 /start 命令：
+```
 
-python
-Copy code
+下一步是创建机器人命令和回调函数。首先是 `/start` 命令：
+
+```python
 def start(update, context):
 	"""Send a message when the command /start is issued."""
 	update.message.reply_text('Hi! Welcome to the bot. Type /help to get a list of available commands.')
 
 start_handler = CommandHandler('start', start)
-然后是 /help 命令：
+```
 
-python
-Copy code
+然后是 `/help` 命令：
+
+```
 def help(update, context):
 	"""Send a message when the command /help is issued."""
 	message = '''Here are the available commands:
@@ -55,10 +59,11 @@ def help(update, context):
 	update.message.reply_text(message)
 
 help_handler = CommandHandler('help', help)
+```
+
 接着是投稿功能的回调函数，其中包括发送标题、海报和地址三个步骤：
 
-python
-Copy code
+```python
 def post_title(update, context):
 	"""Ask for post title."""
 	context.user_data['title'] = update.message.text
@@ -84,3 +89,5 @@ def post_link(update, context):
 
 	# Notify the user that the post has been saved
 	update.message.reply_text('Your
+```
+
